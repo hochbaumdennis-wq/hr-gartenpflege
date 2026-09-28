@@ -63,21 +63,30 @@
         <path d="M2 3l22 17L46 3M2 31l16-14M46 31L30 17"/>
       </g>
     </symbol>
-    <symbol id="i-tools" viewBox="0 0 120 120">
-      <!-- Spaten (links unten → rechts oben) -->
-      <g fill="currentColor">
-        <path d="M86 18a9 9 0 0 1 16 8l-2.4 3.2-3.3-2.4 2.3-3.1a4.4 4.4 0 0 0-8.3-3.3l-2.3 3.1-3.2-2.4z"/>
-        <path d="M84.5 25.8l3.8 2.8-38.6 52-3.8-2.8z"/>
-        <path d="M39.8 71.3l13.4 9.9c2.2 1.6 2.6 4.7 1 6.9l-8.7 11.7c-4.8 6.4-13 8.3-19.9 5l-4.5 6c-.9 1.2-2.6 1.4-3.7.6s-1.4-2.6-.5-3.7l4.4-6c-5.2-5.6-5.7-14-.9-20.4l8.7-11.8c1.7-2.2 4.8-2.7 7-1z"/>
+    <!-- Logo: Spaten & Schneeschieber gekreuzt (Aussparungen per Maske → transparent) -->
+    <mask id="tools-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="760" height="780">
+      <rect width="760" height="780" fill="#fff"/>
+      <g fill="none" stroke="#000" stroke-linecap="round">
+        <path d="M244 530L104 690" stroke-width="7"/>
+        <path d="M419 566l68 108M472 544l68 108M524 522l68 108M577 500l62 98" stroke-width="13"/>
+        <path d="M452 716L700 620" stroke-width="7"/>
       </g>
-      <!-- Schneeschaufel (rechts unten → links oben) -->
-      <g fill="currentColor">
-        <path d="M18 14a9 9 0 0 1 16-5.7l-3.3 2.4a4.4 4.4 0 0 0-7.4 5.1l2.3 3.1-3.3 2.4-2.3-3.1A9 9 0 0 1 18 14z"/>
-        <path d="M27.6 18.8l3.8-2.8 39.4 53.1-3.8 2.8z"/>
-      </g>
-      <path fill="currentColor" d="M63.6 67.6l18.7-13.9 24.4 32.8c1.5 2 1.1 4.8-.9 6.3L86.3 107c-2 1.5-4.8 1.1-6.3-.9L55.6 73.3z"/>
-      <g stroke="rgba(29,86,91,.85)" stroke-width="2.2" stroke-linecap="round">
-        <path d="M72 70.5l19.8 26.6M79 65.8l19.8 26.6M65.5 75.3l19.4 26.1"/>
+    </mask>
+    <symbol id="i-tools" viewBox="30 24 704 732">
+      <g mask="url(#tools-cut)">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M80 96Q132 70 186 54Q188 110 180 162Q125 140 80 96Z" stroke-width="27"/>
+          <path d="M520 54Q575 66 632 98Q590 132 542 162Q528 110 520 54Z" stroke-width="27"/>
+          <path d="M184 170L202 194M540 172L522 196" stroke-width="30"/>
+          <path d="M205 195L462 512" stroke-width="22"/>
+          <path d="M522 196L236 518" stroke-width="22"/>
+        </g>
+        <g fill="currentColor" stroke="currentColor" stroke-linejoin="round" stroke-width="12">
+          <path d="M142 466L300 580C270 630 230 690 170 715C130 732 90 730 60 722C40 680 40 620 70 570C90 535 115 500 142 466Z"/>
+          <path d="M214 488L256 520L240 534L202 505Z"/>
+          <path d="M358 574Q488 505 622 462L714 642L462 740Z"/>
+          <path d="M446 505L480 530L470 545L436 520Z"/>
+        </g>
       </g>
     </symbol>
   </svg>
