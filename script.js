@@ -94,6 +94,11 @@ form.addEventListener("submit", async (e) => {
   const data = Object.fromEntries(new FormData(form));
   if (data._honey) return; // Bot
 
+  if (location.protocol === "file:") {
+    setStatus("Das Formular funktioniert nur, wenn die Website online (über http/https) aufgerufen wird – nicht als lokal geöffnete Datei.", "error");
+    return;
+  }
+
   submitBtn.disabled = true;
   setStatus("Wird gesendet …");
 
@@ -115,6 +120,15 @@ form.addEventListener("submit", async (e) => {
       }),
     });
     const json = await res.json().catch(() => ({}));
+    if (/activat/i.test(json.message || "")) {
+      // Formular ist bei FormSubmit noch nicht freigeschaltet
+      setStatus(
+        `Das Formular muss noch einmalig freigeschaltet werden: Bitte im Postfach ${RECIPIENT} ` +
+          "(ggf. Spam-Ordner) in der Mail von FormSubmit auf „Activate Form“ klicken und erneut senden.",
+        "error"
+      );
+      return;
+    }
     if (!res.ok || json.success === false || json.success === "false") throw new Error(json.message || res.status);
 
     form.reset();
